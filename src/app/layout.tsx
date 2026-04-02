@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
 import { getPublicSiteUrl } from "@/lib/public-site-url";
 import "./globals.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const siteUrl = getPublicSiteUrl();
 
@@ -127,12 +128,6 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..600&display=swap"
           rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
         />
       </head>
       <body className="min-h-screen flex flex-col">
