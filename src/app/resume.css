@@ -918,11 +918,14 @@ section.landing-slide {
   overflow: hidden;
 }
 
+/* 46×7 com células quadradas → proporção fixa; evita bloco "alto e apertado" no mobile */
 .contrib-grid {
   display: grid;
   width: 100%;
-  height: clamp(200px, 36vh, 440px);
-  min-height: 180px;
+  aspect-ratio: 46 / 7;
+  height: auto;
+  min-height: 0;
+  max-height: none;
   grid-template-columns: repeat(46, minmax(0, 1fr));
   grid-template-rows: repeat(7, minmax(0, 1fr));
   gap: clamp(2px, 0.35vw, 4px);
@@ -962,7 +965,6 @@ section.landing-slide {
 
 @media (max-width: 540px) {
   .contrib-grid {
-    height: clamp(160px, 32vh, 360px);
     gap: 2px;
     padding: 0 0.45rem;
   }
