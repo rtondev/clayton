@@ -51,7 +51,7 @@ export function Contacto() {
           Disponível para <strong>oportunidades</strong> e colaborações.
         </p>
         <p className="site-footer__copy">
-          © 2026 · Clayton Rennan · Extremoz / RN · IFRN
+          © 2026 · Clayton Rennan · {siteConfig.location} · IFRN
         </p>
       </div>
     </footer>

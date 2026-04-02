@@ -1,13 +1,34 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
-import type { IfrnCertBlock } from "@/data/certificates";
+import type { ProjectStripBlockData, StripTagTone } from "@/data/project-strip";
 
 function scrollAmount(el: HTMLElement) {
   return Math.max(220, Math.min(el.clientWidth * 0.85, 380));
 }
 
-export function CertBlock({ block }: { block: IfrnCertBlock }) {
+function tagClass(tone: StripTagTone): string {
+  return `proj-tag proj-tag--${tone}`;
+}
+
+export type StripBlockProps = {
+  block: ProjectStripBlockData;
+  scrollAriaLabel: string;
+  prevAriaLabel: string;
+  nextAriaLabel: string;
+  variantClass:
+    | "cert-block--research"
+    | "cert-block--extension"
+    | "cert-block--sites";
+};
+
+export function StripBlock({
+  block,
+  scrollAriaLabel,
+  prevAriaLabel,
+  nextAriaLabel,
+  variantClass,
+}: StripBlockProps) {
   const rootRef = useRef<HTMLDivElement>(null);
 
   const init = useCallback(() => {
@@ -58,7 +79,7 @@ export function CertBlock({ block }: { block: IfrnCertBlock }) {
   }, [init]);
 
   return (
-    <div className="cert-block" ref={rootRef}>
+    <div className={`cert-block ${variantClass}`} ref={rootRef}>
       <div className="cert-block__head">
         <div className="cert-block__head-text">
           <p className="subtitle-landing cert-block__title">{block.title}</p>
@@ -66,19 +87,19 @@ export function CertBlock({ block }: { block: IfrnCertBlock }) {
         </div>
         <fieldset
           className="cert-strip__controls border-0 p-0 m-0 min-w-0"
-          aria-label="Rolar lista de certificados"
+          aria-label={scrollAriaLabel}
         >
           <button
             type="button"
             className="cert-strip__btn cert-strip__btn--prev"
-            aria-label="Certificados anteriores"
+            aria-label={prevAriaLabel}
           >
             <i className="fa-solid fa-chevron-left" aria-hidden="true" />
           </button>
           <button
             type="button"
             className="cert-strip__btn cert-strip__btn--next"
-            aria-label="Certificados seguintes"
+            aria-label={nextAriaLabel}
           >
             <i className="fa-solid fa-chevron-right" aria-hidden="true" />
           </button>
@@ -86,55 +107,30 @@ export function CertBlock({ block }: { block: IfrnCertBlock }) {
       </div>
       <div className="cert-list">
         {block.items.map((item) => (
-          <article key={item.suapUrl} className="cert-card">
-            <div
-              className={`cert-card__head${item.noCh ? " cert-card__head--no-ch" : ""}`}
-            >
-              {item.ch ? (
-                <span className="cert-card__ch">{item.ch}</span>
-              ) : null}
-              <div className="cert-card__tags">
-                {item.tags.map((t, tagIdx) => (
-                  <span
-                    key={`${item.suapUrl}-${tagIdx}-${t}`}
-                    className="cert-badge cert-badge--neutral"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+          <article key={item.id} className="cert-card cert-card--project-strip">
+            <div className="proj-card-tags">
+              {item.tags.map((tag, tagIdx) => (
+                <span
+                  key={`${item.id}-tag-${tagIdx}`}
+                  className={tagClass(tag.tone)}
+                >
+                  {tag.label}
+                </span>
+              ))}
             </div>
             <h3 className="cert-card__title">{item.title}</h3>
             <p className="cert-card__meta">{item.meta}</p>
-            <p className="cert-card__link">
-              {item.suapUrlSecondary ? (
-                <>
-                  <a
-                    href={item.suapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Ver autenticidade no SUAP (organização)
-                  </a>
-                  {" · "}
-                  <a
-                    href={item.suapUrlSecondary}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Ver autenticidade no SUAP (ministração)
-                  </a>
-                </>
-              ) : (
-                <a
-                  href={item.suapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver autenticidade no SUAP
+            {item.href ? (
+              <p className="cert-card__link cert-card__link--strip">
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  Abrir site{" "}
+                  <i
+                    className="fa-solid fa-arrow-up-right-from-square"
+                    aria-hidden="true"
+                  />
                 </a>
-              )}
-            </p>
+              </p>
+            ) : null}
           </article>
         ))}
       </div>

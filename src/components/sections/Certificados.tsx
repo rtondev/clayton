@@ -5,7 +5,7 @@ export function Certificados() {
   return (
     <section
       id="certificados"
-      className="landing-slide landing-slide--light"
+      className="landing-slide landing-slide--dark section-research"
       aria-labelledby="heading-certificados"
     >
       <h2 id="heading-certificados" className="landing-slide__mega">

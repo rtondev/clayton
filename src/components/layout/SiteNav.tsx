@@ -174,6 +174,13 @@ export function SiteNav() {
               Início
             </a>
             <a
+              href="#matriz"
+              {...linkProps("matriz", activeId)}
+              onClick={closeOnMobile}
+            >
+              Atividade
+            </a>
+            <a
               href="#sobre"
               {...linkProps("sobre", activeId)}
               onClick={closeOnMobile}
@@ -186,6 +193,13 @@ export function SiteNav() {
               onClick={closeOnMobile}
             >
               Formação
+            </a>
+            <a
+              href="#carreira"
+              {...linkProps("carreira", activeId)}
+              onClick={closeOnMobile}
+            >
+              Carreira
             </a>
             <a
               href="#certificados"

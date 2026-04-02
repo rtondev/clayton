@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "UI/UX",
     "DevOps",
     "Extremoz",
+    "Natal",
     "RN",
     "portfólio",
     "currículo",

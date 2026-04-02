@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: "Clayton Rennan de Araújo dos Santos",
   shortName: "Clayton Rennan",
-  title: "Clayton Rennan — Full Stack · UI/UX · DevOps",
+  title: "Clayton Rennan - Full Stack · UI/UX · DevOps",
   description:
-    "Portfólio e currículo: desenvolvedor full stack, UI/UX designer e DevOps. IFRN, Extremoz/RN. Next.js, NestJS, Flutter e mais.",
+    "Portfólio e currículo: desenvolvedor full stack, UI/UX designer e DevOps. IFRN, Extremoz/Natal/RN. Next.js, NestJS, Flutter e mais.",
   locale: "pt_BR",
   email: "rton.dev@gmail.com",
-  location: "Extremoz, RN",
+  location: "Extremoz/Natal/RN",
   birth: "22/12/2006 (19 anos)",
   lattes: "http://lattes.cnpq.br/4918774593222511",
   social: {
@@ -18,8 +18,10 @@ export const siteConfig = {
 
 export const navIds = [
   "inicio",
+  "matriz",
   "sobre",
   "formacao",
+  "carreira",
   "certificados",
   "skills",
   "projetos",

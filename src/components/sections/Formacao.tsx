@@ -11,7 +11,9 @@ export function Formacao() {
       <div className="landing-slide__inner">
         <p className="bio bio--short">
           <strong>EM Técnico · Formação para Internet</strong> · IFRN Campus
-          Natal Zona Norte · 4/4 períodos.
+          Natal Zona Norte · 4/4 períodos. Formação contínua também na{" "}
+          <strong>Alura</strong> e na <strong>Design Boost</strong> (tecnologia
+          e design).
         </p>
       </div>
     </section>

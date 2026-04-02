@@ -5,6 +5,8 @@ export type IfrnCertificate = {
   title: string;
   meta: string;
   suapUrl: string;
+  /** Segundo documento SUAP (ex.: mesmo evento, papel diferente). */
+  suapUrlSecondary?: string;
 };
 
 export type IfrnCertBlock = {
@@ -66,21 +68,16 @@ export const ifrnCertBlocks: IfrnCertBlock[] = [
   },
   {
     title: "Organização e oficinas",
-    stats: "7h45 · 4 certificados",
+    stats: "7h45 · 3 certificados",
     items: [
       {
-        ch: "3h",
-        tags: ["Organizou"],
+        ch: "6h",
+        tags: ["Organizou", "Ministrou"],
         title: "Formação para Comissão de Mídias",
-        meta: "10/11/2022 · DIAC/ZN",
+        meta: "10/11/2022 · DIAC/ZN · 6 h no mesmo evento (3 h organização + 3 h ministração).",
         suapUrl: "https://suap.ifrn.edu.br/eventos/download/e7a54c2cf368b234/",
-      },
-      {
-        ch: "3h",
-        tags: ["Ministrou"],
-        title: "Formação para Comissão de Mídias",
-        meta: "10/11/2022 · DIAC/ZN",
-        suapUrl: "https://suap.ifrn.edu.br/eventos/download/b58e10bb7653e050/",
+        suapUrlSecondary:
+          "https://suap.ifrn.edu.br/eventos/download/b58e10bb7653e050/",
       },
       {
         ch: "1h45",
@@ -100,7 +97,7 @@ export const ifrnCertBlocks: IfrnCertBlock[] = [
   },
   {
     title: "Apresentações e exposições",
-    stats: "46h · 4 certificados",
+    stats: "48h · 5 certificados",
     items: [
       {
         ch: "5h",
@@ -131,6 +128,13 @@ export const ifrnCertBlocks: IfrnCertBlock[] = [
         meta: "24/02/2025 a 12/03/2025 · DIAC/ZN",
         suapUrl: "https://suap.ifrn.edu.br/eventos/download/d89076bc55801223/",
       },
+      {
+        noCh: true,
+        tags: ["Autor de trabalhos"],
+        title: "VII Semana de Ciência, Tecnologia e Extensão (Secitex)",
+        meta: '14 a 16/10/2025 · Campus Natal-Zona Norte · carga horária não discriminada no certificado único. Trabalhos: plataforma digital (gamificação / Semana do Meio Ambiente - SEMENTE, pôster CONGIC); "Semeando crônicas para um novo amanhã" (X Mostra Tecnológica).',
+        suapUrl: "https://suap.ifrn.edu.br/eventos/download/cc70711cee25dff2/",
+      },
     ],
   },
   {
@@ -150,19 +154,6 @@ export const ifrnCertBlocks: IfrnCertBlock[] = [
         title: "Semana do Meio Ambiente - SEMENTE 2025",
         meta: "04/06/2025 a 06/06/2025 · DIAC/ZN",
         suapUrl: "https://suap.ifrn.edu.br/eventos/download/1cd00217a464a324/",
-      },
-    ],
-  },
-  {
-    title: "Autoria (Secitex)",
-    stats: "1 certificado · CH no documento único",
-    items: [
-      {
-        noCh: true,
-        tags: ["Autor de trabalhos"],
-        title: "VII Semana de Ciência, Tecnologia e Extensão (Secitex)",
-        meta: '14 a 16/10/2025 · Campus Natal-Zona Norte · carga horária não discriminada no certificado único. Trabalhos: plataforma digital (gamificação / Semana do Meio Ambiente - SEMENTE, pôster CONGIC); "Semeando crônicas para um novo amanhã" (X Mostra Tecnológica).',
-        suapUrl: "https://suap.ifrn.edu.br/eventos/download/cc70711cee25dff2/",
       },
     ],
   },

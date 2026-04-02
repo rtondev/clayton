@@ -33,7 +33,7 @@ export function Hero() {
           <ul className="meta" aria-label="Contacto e localização">
             <li>
               <i className="fa-solid fa-location-dot" aria-hidden="true" />{" "}
-              Extremoz, RN
+              {siteConfig.location}
             </li>
             <li>
               <i className="fa-solid fa-calendar" aria-hidden="true" />{" "}
