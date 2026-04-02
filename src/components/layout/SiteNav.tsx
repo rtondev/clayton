@@ -76,6 +76,7 @@ export function SiteNav() {
       if (!window.matchMedia("(max-width: 720px)").matches && navRef.current) {
         setOpen(false);
         document.body.classList.remove("nav-mega-open");
+        document.documentElement.classList.remove("nav-mega-open");
         if (toggleRef.current) {
           toggleRef.current.setAttribute("aria-expanded", "false");
           toggleRef.current.setAttribute(
@@ -107,10 +108,9 @@ export function SiteNav() {
   }, [syncAnchorOffset, updateActiveNav]);
 
   useEffect(() => {
-    const nav = navRef.current;
-    if (!nav || !toggleRef.current) return;
-    nav.classList.toggle("is-open", open);
+    if (!toggleRef.current) return;
     document.body.classList.toggle("nav-mega-open", open);
+    document.documentElement.classList.toggle("nav-mega-open", open);
     toggleRef.current.setAttribute("aria-expanded", open ? "true" : "false");
     toggleRef.current.setAttribute(
       "aria-label",
@@ -157,8 +157,11 @@ export function SiteNav() {
           onClick={() => setOpen((v) => !v)}
         >
           <span className="landing-nav__toggle-icons" aria-hidden="true">
-            <i className="fa-solid fa-bars landing-nav__icon-open" />
-            <i className="fa-solid fa-xmark landing-nav__icon-close" />
+            {open ? (
+              <i className="fa-solid fa-xmark landing-nav__toggle-icon" />
+            ) : (
+              <i className="fa-solid fa-bars landing-nav__toggle-icon" />
+            )}
           </span>
         </button>
         <div className="landing-nav__mega" id="primary-nav-mega">
