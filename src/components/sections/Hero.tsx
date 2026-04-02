@@ -20,6 +20,7 @@ export function Hero() {
             </li>
             <li className="hero-stat">
               <strong>22+</strong> projetos · <strong>14+</strong> sites em
+              {"\u00A0"}
               produção
             </li>
             <li className="hero-stat">
