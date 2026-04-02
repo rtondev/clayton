@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { VLibrasWidget } from "@/components/accessibility/VLibrasWidget";
+import { FloatingBackToTop } from "@/components/layout/FloatingBackToTop";
 import { siteConfig } from "@/data/site";
 import { getPublicSiteUrl } from "@/lib/public-site-url";
 import "./globals.css";
@@ -137,6 +139,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <FloatingBackToTop />
+        <VLibrasWidget />
       </body>
     </html>
   );

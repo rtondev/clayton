@@ -2355,7 +2355,69 @@ a.chip.chip-link:hover .chip-link__icon {
   color: #444444;
 }
 
+/* Botão flutuante: voltar ao topo (à direita, acima do VLibras) */
+.floating-back-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 6.25rem;
+  z-index: 9998;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.78);
+  color: #fafafa;
+  cursor: pointer;
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.45rem);
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.floating-back-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-back-top:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.floating-back-top:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 3px;
+}
+
+.floating-back-top i {
+  font-size: 1rem;
+}
+
+@media (max-width: 540px) {
+  .floating-back-top {
+    right: 0.65rem;
+    bottom: 5.85rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
 @media print {
+  .floating-back-top {
+    display: none !important;
+  }
+
   .cert-strip {
     display: block;
   }
