@@ -4,7 +4,6 @@ export const siteConfig = {
   title: "Clayton Rennan — Full Stack · UI/UX · DevOps",
   description:
     "Portfólio e currículo: desenvolvedor full stack, UI/UX designer e DevOps. IFRN, Extremoz/RN. Next.js, NestJS, Flutter e mais.",
-  url: "https://clayton.dev",
   locale: "pt_BR",
   email: "rton.dev@gmail.com",
   location: "Extremoz, RN",

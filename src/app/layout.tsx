@@ -1,20 +1,29 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
+import { getPublicSiteUrl } from "@/lib/public-site-url";
 import "./globals.css";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL != null &&
-  process.env.NEXT_PUBLIC_SITE_URL !== ""
-    ? process.env.NEXT_PUBLIC_SITE_URL
-    : "http://localhost:3000";
+const siteUrl = getPublicSiteUrl();
+
+const googleVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ?? "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: siteConfig.shortName,
   title: {
     default: siteConfig.title,
     template: `%s · ${siteConfig.shortName}`,
   },
   description: siteConfig.description,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  ...(googleVerification !== ""
+    ? { verification: { google: googleVerification } }
+    : {}),
   keywords: [
     "Clayton Rennan",
     "Full Stack",
@@ -63,24 +72,41 @@ export const metadata: Metadata = {
   category: "portfolio",
 };
 
+const origin = new URL(siteUrl).origin;
+const personId = `${origin}/#person`;
+const websiteId = `${origin}/#website`;
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: siteConfig.name,
-  email: siteConfig.email,
-  url: siteUrl,
-  jobTitle: "Desenvolvedor Full Stack · UI/UX Designer · DevOps",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Extremoz",
-    addressRegion: "RN",
-    addressCountry: "BR",
-  },
-  sameAs: [
-    siteConfig.social.github,
-    siteConfig.social.linkedin,
-    siteConfig.social.instagram,
-    siteConfig.lattes,
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: siteConfig.name,
+      url: siteUrl,
+      jobTitle: "Desenvolvedor Full Stack · UI/UX Designer · DevOps",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Extremoz",
+        addressRegion: "RN",
+        addressCountry: "BR",
+      },
+      sameAs: [
+        siteConfig.social.github,
+        siteConfig.social.linkedin,
+        siteConfig.social.instagram,
+        siteConfig.lattes,
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteUrl,
+      name: siteConfig.title,
+      description: siteConfig.description,
+      inLanguage: "pt-BR",
+      publisher: { "@id": personId },
+    },
   ],
 };
 
@@ -112,7 +138,6 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD estático
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}

@@ -1,17 +1,14 @@
 import type { MetadataRoute } from "next";
-
-const base =
-  process.env.NEXT_PUBLIC_SITE_URL != null &&
-  process.env.NEXT_PUBLIC_SITE_URL !== ""
-    ? process.env.NEXT_PUBLIC_SITE_URL
-    : "http://localhost:3000";
+import { getPublicSiteUrl } from "@/lib/public-site-url";
 
 export default function robots(): MetadataRoute.Robots {
+  const root = getPublicSiteUrl();
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${base.replace(/\/$/, "")}/sitemap.xml`,
+    host: root,
+    sitemap: `${root}/sitemap.xml`,
   };
 }
