@@ -22,8 +22,8 @@ export const navIds = [
   "sobre",
   "formacao",
   "carreira",
-  "certificados",
   "skills",
   "projetos",
+  "certificados",
   "contato",
 ] as const;

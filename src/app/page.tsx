@@ -19,9 +19,9 @@ export default function Home() {
         <Sobre />
         <Formacao />
         <Carreira />
-        <Certificados />
         <Skills />
         <Projetos />
+        <Certificados />
         <Contacto />
       </main>
     </>

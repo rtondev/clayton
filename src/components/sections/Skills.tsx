@@ -2,7 +2,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="landing-slide landing-slide--light"
+      className="landing-slide landing-slide--dark"
       aria-labelledby="heading-skills"
     >
       <h2 id="heading-skills" className="landing-slide__mega">
@@ -12,34 +12,10 @@ export function Skills() {
         <p className="subtitle-landing">Stack</p>
         <div className="grid grid--skills-main">
           <span className="chip">
-            <i className="fa-brands fa-docker" aria-hidden="true" /> Docker
+            <i className="fa-brands fa-react" aria-hidden="true" /> React
           </span>
           <span className="chip">
-            <i className="fa-brands fa-react" aria-hidden="true" /> Flutter /
-            Dart
-          </span>
-          <span className="chip">
-            <i className="fa-brands fa-html5" aria-hidden="true" /> HTML /{" "}
-            <i className="fa-brands fa-css3-alt" aria-hidden="true" /> CSS
-          </span>
-          <span className="chip">
-            <i className="fa-solid fa-wind" aria-hidden="true" /> Tailwind CSS
-          </span>
-          <span className="chip">
-            <i className="fa-brands fa-bootstrap" aria-hidden="true" />{" "}
-            Bootstrap
-          </span>
-          <span className="chip">
-            <i className="fa-brands fa-js" aria-hidden="true" /> JavaScript
-          </span>
-          <span className="chip">
-            <i className="fa-solid fa-t" aria-hidden="true" /> TypeScript
-          </span>
-          <span className="chip">
-            <i className="fa-brands fa-python" aria-hidden="true" /> Python
-          </span>
-          <span className="chip">
-            <i className="fa-brands fa-node-js" aria-hidden="true" /> Next.js
+            <i className="fa-brands fa-js" aria-hidden="true" /> Next.js
           </span>
           <span className="chip">
             <i className="fa-solid fa-cube" aria-hidden="true" /> NestJS
@@ -49,10 +25,45 @@ export function Skills() {
             Express
           </span>
           <span className="chip">
+            <i className="fa-solid fa-t" aria-hidden="true" /> TypeScript
+          </span>
+          <span className="chip">
+            <i className="fa-brands fa-js" aria-hidden="true" /> JavaScript
+          </span>
+          <span className="chip">
+            <i className="fa-brands fa-flutter" aria-hidden="true" /> Flutter /
+            Dart
+          </span>
+          <span className="chip">
+            <i className="fa-brands fa-python" aria-hidden="true" /> Python
+          </span>
+          <span className="chip">
             <i className="fa-brands fa-laravel" aria-hidden="true" /> Laravel
           </span>
           <span className="chip">
             <i className="fa-brands fa-php" aria-hidden="true" /> PHP
+          </span>
+          <span className="chip">
+            <i className="fa-solid fa-database" aria-hidden="true" /> MySQL
+          </span>
+          <span className="chip">
+            <i className="fa-solid fa-database" aria-hidden="true" /> PostgreSQL
+          </span>
+          <span className="chip">
+            <i className="fa-solid fa-layer-group" aria-hidden="true" /> Prisma
+          </span>
+          <span className="chip">
+            <i className="fa-solid fa-bolt" aria-hidden="true" /> Redis
+          </span>
+          <span className="chip">
+            <i className="fa-brands fa-html5" aria-hidden="true" /> HTML /{" "}
+            <i className="fa-brands fa-css3-alt" aria-hidden="true" /> CSS
+          </span>
+          <span className="chip">
+            <i className="fa-solid fa-wind" aria-hidden="true" /> Tailwind CSS
+          </span>
+          <span className="chip">
+            <i className="fa-brands fa-docker" aria-hidden="true" /> Docker
           </span>
           <span className="chip">
             <i className="fa-brands fa-wordpress" aria-hidden="true" />{" "}
@@ -82,6 +93,9 @@ export function Skills() {
             <i className="fa-brands fa-aws" aria-hidden="true" /> AWS
           </span>
           <span className="chip">
+            <i className="fa-solid fa-cloud" aria-hidden="true" /> Vercel
+          </span>
+          <span className="chip">
             <i className="fa-solid fa-server" aria-hidden="true" /> Hostinger ·
             Contabo
           </span>
@@ -90,13 +104,11 @@ export function Skills() {
             SSH
           </span>
           <span className="chip">
-            <i className="fa-brands fa-windows" aria-hidden="true" /> Windows
+            <i className="fa-solid fa-network-wired" aria-hidden="true" /> Nginx
           </span>
         </div>
-        <p className="subtitle-landing">
-          Escritório · Microsoft 365 · suite completa
-        </p>
-        <div className="grid">
+        <p className="subtitle-landing">Escritório</p>
+        <div className="grid grid--skills-main">
           <span className="chip">
             <i className="fa-solid fa-file-word" aria-hidden="true" /> Word
           </span>
@@ -117,26 +129,8 @@ export function Skills() {
             <i className="fa-solid fa-cloud" aria-hidden="true" /> OneDrive
           </span>
           <span className="chip">
-            <i className="fa-solid fa-note-sticky" aria-hidden="true" /> OneNote
-          </span>
-          <span className="chip">
-            <i className="fa-solid fa-share-nodes" aria-hidden="true" />{" "}
-            SharePoint
-          </span>
-          <span className="chip">
-            <i className="fa-solid fa-clipboard-list" aria-hidden="true" />{" "}
-            Forms
-          </span>
-          <span className="chip">
-            <i className="fa-solid fa-list-check" aria-hidden="true" /> Lists
-          </span>
-          <span className="chip">
             <i className="fa-brands fa-google-drive" aria-hidden="true" /> Drive
             · Sheets
-          </span>
-          <span className="chip">
-            <i className="fa-solid fa-file-excel" aria-hidden="true" /> Excel ·
-            dados
           </span>
         </div>
         <p className="subtitle-landing">Idiomas</p>
@@ -148,7 +142,7 @@ export function Skills() {
             ·
           </span>
           <span className="chip chip--idiomas" lang="en">
-            EN básico
+            EN intermediário
           </span>
           <span className="grid--idiomas-sep" aria-hidden="true">
             ·

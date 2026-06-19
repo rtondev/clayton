@@ -19,7 +19,7 @@ export function Hero() {
               <strong>5+</strong> anos em dev
             </li>
             <li className="hero-stat">
-              <strong>22+</strong> projetos · <strong>14+</strong> sites em
+              <strong>22+</strong> projetos · <strong>15+</strong> sites em
               {"\u00A0"}
               produção
             </li>

@@ -54,9 +54,9 @@ export const careerTimeline: CareerMilestone[] = [
       "Desenvolvimento em projetos nas equipas da i9chain e TradeClub, com stack moderna e entrega contínua.",
   },
   {
-    period: "abr. 2026 - presente",
-    title: "Braso · Full stack júnior",
+    period: "2026",
+    title: "Steify · Full stack pleno",
     description:
-      "Desenvolvedor full stack júnior na Braso, integrando equipa técnica e contribuindo para produtos em produção.",
+      "Desenvolvedor full stack pleno na Steify, integrando equipa técnica e contribuindo para produtos em produção.",
   },
 ];

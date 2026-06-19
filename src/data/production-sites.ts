@@ -5,21 +5,42 @@ const live = { label: "Live", tone: "success" as const };
 
 export const productionSitesBlock = {
   title: "Sites em produção",
-  stats: `14 domínios · HTTPS · ~${fmtHours(portfolioHours.production)} h`,
+  stats: `15 domínios · HTTPS · ~${fmtHours(portfolioHours.production)} h`,
   items: [
     {
-      id: "fluxomed",
-      title: "fluxomed.com",
-      meta: "Produto web na área de saúde / bem-estar; stack full stack em produção.",
+      id: "steify",
+      title: "steify.com",
+      meta: "Produto web Steify; stack full stack em produção.",
       tags: [live],
-      href: "https://fluxomed.com/",
+      href: "https://steify.com/",
     },
     {
-      id: "fluxofit",
-      title: "fluxofit.com.br",
-      meta: "Site e fluxos para fitness e acompanhamento; front e deploy contínuos.",
+      id: "sicat",
+      title: "sicat.ifrn.edu.br",
+      meta: "SICAT no domínio IFRN - UI em produção para o ecossistema do projeto.",
       tags: [live],
-      href: "https://fluxofit.com.br/",
+      href: "https://sicat.ifrn.edu.br/",
+    },
+    {
+      id: "ifcalc",
+      title: "ifcalc.site",
+      meta: "Ferramenta / calculadora web para uso académico e público IF.",
+      tags: [live],
+      href: "https://ifcalc.site/",
+    },
+    {
+      id: "fluxoclinic",
+      title: "fluxoclinic.com.br",
+      meta: "Produto web na área de saúde / clínica; stack full stack em produção.",
+      tags: [live],
+      href: "https://fluxoclinic.com.br/",
+    },
+    {
+      id: "mundomeg",
+      title: "mundomeg.com.br",
+      meta: "MEG - Mundo Encantado da Geografia; conteúdo e vitrine do projeto.",
+      tags: [live],
+      href: "https://mundomeg.com.br/",
     },
     {
       id: "tradeclub",
@@ -36,6 +57,13 @@ export const productionSitesBlock = {
       href: "https://i9chain.com/",
     },
     {
+      id: "fluxofit",
+      title: "fluxofit.com.br",
+      meta: "Site e fluxos para fitness e acompanhamento; front e deploy contínuos.",
+      tags: [live],
+      href: "https://fluxofit.com.br/",
+    },
+    {
       id: "sementeifzn",
       title: "sementeifzn.site",
       meta: "Site do SEMENTE IFZN - extensão e divulgação no campus Zona Norte.",
@@ -43,25 +71,11 @@ export const productionSitesBlock = {
       href: "https://sementeifzn.site/",
     },
     {
-      id: "ifcalc",
-      title: "ifcalc.org",
-      meta: "Ferramenta / calculadora web para uso académico e público IF.",
-      tags: [live],
-      href: "https://ifcalc.org/",
-    },
-    {
       id: "anamnese",
       title: "anamneseempreendedor.com.br",
       meta: "Fluxo de anamnese e formulários para empreendedorismo e cadastro.",
       tags: [live],
       href: "https://anamneseempreendedor.com.br/",
-    },
-    {
-      id: "mundomeg",
-      title: "mundomeg.com.br",
-      meta: "MEG - Mundo Encantado da Geografia; conteúdo e vitrine do projeto.",
-      tags: [live],
-      href: "https://mundomeg.com.br/",
     },
     {
       id: "reability",
@@ -97,13 +111,6 @@ export const productionSitesBlock = {
       meta: "Front IFBrain no Vercel; interface ligada a projeto académico IF.",
       tags: [live],
       href: "https://ifbrain.vercel.app/",
-    },
-    {
-      id: "sicat",
-      title: "sicat-front.vercel.app",
-      meta: "Front SICAT (Vercel) - UI em produção para o ecossistema do projeto.",
-      tags: [live],
-      href: "https://sicat-front.vercel.app/",
     },
   ],
 } satisfies ProjectStripBlockData;

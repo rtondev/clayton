@@ -10,7 +10,7 @@ export function Projetos() {
   return (
     <section
       id="projetos"
-      className="landing-slide landing-slide--dark section-research"
+      className="landing-slide landing-slide--light section-research"
       aria-labelledby="heading-projetos"
     >
       <h2 id="heading-projetos" className="landing-slide__mega">
@@ -18,7 +18,7 @@ export function Projetos() {
       </h2>
       <div className="landing-slide__inner">
         <p className="bio bio--short mb-[0.85rem]">
-          {`22+ projetos no portfólio no total, somando produção, extensão, pesquisa e projetos pessoais (~${fmtHours(portfolioHoursTotal)} h no conjunto): 14+ em produção, 7 registos de extensão e 4 de pesquisa no IFRN.`}
+          {`22+ projetos no portfólio no total, somando produção, extensão, pesquisa e projetos pessoais (~${fmtHours(portfolioHoursTotal)} h no conjunto): 15+ em produção, 7 registos de extensão e 4 de pesquisa no IFRN.`}
         </p>
 
         <SitesBlock block={productionSitesBlock} />

@@ -679,9 +679,13 @@ section.landing-slide {
 }
 
 /* Timeline · Carreira (eixo central · cartões alternados) */
+#carreira .bio--short {
+  margin-bottom: 0.55rem;
+}
+
 .career-timeline-wrap {
   position: relative;
-  margin: 1.5rem 0 0;
+  margin: 0.75rem 0 0;
 }
 
 /* Linha: sem border-radius forte (evita “círculos” nas pontas que parecem bolinhas extras) */
@@ -722,11 +726,11 @@ section.landing-slide {
 
 .career-timeline__item {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 2.5rem minmax(0, 1fr);
-  gap: 0 0.85rem;
+  grid-template-columns: minmax(0, 1fr) 2rem minmax(0, 1fr);
+  gap: 0 0.55rem;
   align-items: center;
   margin: 0;
-  padding: 0 0 1.35rem;
+  padding: 0 0 0.8rem;
 }
 
 .career-timeline__item:last-child {
@@ -737,7 +741,7 @@ section.landing-slide {
   grid-column: 1;
   grid-row: 1;
   justify-self: end;
-  max-width: min(100%, 26rem);
+  max-width: min(100%, 22rem);
   width: 100%;
 }
 
@@ -757,7 +761,7 @@ section.landing-slide {
   grid-column: 3;
   grid-row: 1;
   justify-self: start;
-  max-width: min(100%, 26rem);
+  max-width: min(100%, 22rem);
   width: 100%;
 }
 
@@ -767,9 +771,9 @@ section.landing-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  min-width: 2.5rem;
-  max-width: 2.5rem;
+  width: 2rem;
+  min-width: 2rem;
+  max-width: 2rem;
   padding: 0;
   box-sizing: border-box;
 }
@@ -779,8 +783,8 @@ section.landing-slide {
   position: relative;
   z-index: 2;
   flex-shrink: 0;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #0a0a0a;
   border: none;
@@ -793,9 +797,9 @@ section.landing-slide {
 .career-timeline__body {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 14px;
-  padding: 0.9rem 1.1rem 1.05rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.045);
+  border-radius: 12px;
+  padding: 0.55rem 0.75rem 0.65rem;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.04);
   transition:
     transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.22s ease,
@@ -828,13 +832,13 @@ section.landing-slide {
 
 .career-timeline__period {
   display: inline-block;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #3d3d3d;
-  margin: 0 0 0.5rem;
-  padding: 0.22rem 0.55rem;
+  margin: 0 0 0.3rem;
+  padding: 0.16rem 0.45rem;
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.07);
@@ -842,17 +846,17 @@ section.landing-slide {
 
 .career-timeline__title {
   font-family: "Outfit", sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: #0a0a0a;
-  margin: 0 0 0.45rem;
-  line-height: 1.28;
+  margin: 0 0 0.25rem;
+  line-height: 1.22;
 }
 
 .career-timeline__desc {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #444444;
-  line-height: 1.58;
+  line-height: 1.45;
   margin: 0;
 }
 
@@ -888,17 +892,17 @@ section.landing-slide {
   }
 
   .career-timeline__item {
-    padding-bottom: 1.2rem;
+    padding-bottom: 0.75rem;
   }
 }
 
 @media (max-width: 540px) {
   .career-timeline__title {
-    font-size: 0.98rem;
+    font-size: 0.88rem;
   }
 
   .career-timeline__desc {
-    font-size: 0.88rem;
+    font-size: 0.78rem;
   }
 }
 
@@ -1105,7 +1109,7 @@ section.landing-slide {
   user-select: none;
 }
 
-.landing-slide--light #skills .grid--idiomas-sep {
+.landing-slide--dark #skills .grid--idiomas-sep {
   color: #9ca3af;
 }
 
@@ -2135,10 +2139,16 @@ a.chip.chip-link:hover .chip-link__icon {
 }
 
 /* Sites / pesquisa / extensão IFRN (#projetos) - faixas tipo certificados */
-#projetos .cert-block--sites .cert-block__head,
-#projetos .cert-block--research .cert-block__head,
-#projetos .cert-block--extension .cert-block__head {
+#projetos.landing-slide--dark .cert-block--sites .cert-block__head,
+#projetos.landing-slide--dark .cert-block--research .cert-block__head,
+#projetos.landing-slide--dark .cert-block--extension .cert-block__head {
   border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+#projetos.landing-slide--light .cert-block--sites .cert-block__head,
+#projetos.landing-slide--light .cert-block--research .cert-block__head,
+#projetos.landing-slide--light .cert-block--extension .cert-block__head {
+  border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 #projetos .cert-block--sites .cert-block__head {
@@ -2147,10 +2157,16 @@ a.chip.chip-link:hover .chip-link__icon {
   border-top: none;
 }
 
-#projetos .cert-block--sites .cert-block__stats,
-#projetos .cert-block--research .cert-block__stats,
-#projetos .cert-block--extension .cert-block__stats {
+#projetos.landing-slide--dark .cert-block--sites .cert-block__stats,
+#projetos.landing-slide--dark .cert-block--research .cert-block__stats,
+#projetos.landing-slide--dark .cert-block--extension .cert-block__stats {
   color: #9ca3af;
+}
+
+#projetos.landing-slide--light .cert-block--sites .cert-block__stats,
+#projetos.landing-slide--light .cert-block--research .cert-block__stats,
+#projetos.landing-slide--light .cert-block--extension .cert-block__stats {
+  color: #555555;
 }
 
 #projetos .cert-card__link--strip {

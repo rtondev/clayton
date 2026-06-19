@@ -23,20 +23,27 @@ const cellKeys: string[] = (() => {
   return keys;
 })();
 
+const EMPTY_LEVELS = Array.from(
+  { length: ROWS * COLS },
+  () => 0 as const,
+);
+
 export function ContributionHeatmap() {
   const total = ROWS * COLS;
-  const [levels, setLevels] = useState<readonly (0 | 1 | 2 | 3 | 4)[]>(() =>
-    makeLevels(total),
+  const [levels, setLevels] = useState<readonly (0 | 1 | 2 | 3 | 4)[]>(
+    EMPTY_LEVELS,
   );
   const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
+    setLevels(makeLevels(total));
+
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduceMotion(mq.matches);
     const onChange = () => setReduceMotion(mq.matches);
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
-  }, []);
+  }, [total]);
 
   const tick = useCallback(() => {
     setLevels((prev) => {

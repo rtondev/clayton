@@ -1,6 +1,6 @@
 /** Horas agregadas dos blocos Projetos — manter alinhado com os strips. */
 export const portfolioHours = {
-  production: 5280,
+  production: 8280,
   extension: 3094,
   research: 715,
 } as const;

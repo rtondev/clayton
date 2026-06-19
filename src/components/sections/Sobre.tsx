@@ -23,7 +23,7 @@ export function Sobre() {
             extensão e pesquisa
           </li>
           <li>
-            <i className="fa-solid fa-check" aria-hidden="true" /> 14+ sites em
+            <i className="fa-solid fa-check" aria-hidden="true" /> 15+ sites em
             produção
           </li>
           <li>

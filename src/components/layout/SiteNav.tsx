@@ -202,13 +202,6 @@ export function SiteNav() {
               Carreira
             </a>
             <a
-              href="#certificados"
-              {...linkProps("certificados", activeId)}
-              onClick={closeOnMobile}
-            >
-              Certificados
-            </a>
-            <a
               href="#skills"
               {...linkProps("skills", activeId)}
               onClick={closeOnMobile}
@@ -221,6 +214,13 @@ export function SiteNav() {
               onClick={closeOnMobile}
             >
               Projetos
+            </a>
+            <a
+              href="#certificados"
+              {...linkProps("certificados", activeId)}
+              onClick={closeOnMobile}
+            >
+              Certificados
             </a>
             <a
               href="#contato"
